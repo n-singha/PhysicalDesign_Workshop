@@ -105,10 +105,15 @@ Design of a single cell of the library has the following Flow:
 ### 6.2 Lab Instances:
 **Experiment 1:** We did ngspice simultaions of a inverter for both dc and transient analysis
 * commands to run ngspice: 
-  **ngspice inv.spice
-  **ngspice 1 -> run
-  **ngspice 1 -> setplot dc1
+  
+  **ngspice inv.spice**
+  
+  **ngspice 1 -> run**
+  
+  **ngspice 1 -> setplot dc1**
+  
   **ngspice 1 -> plot out**
+  
 * We did ngspice simulations for pmos size 0.5 and 0.75 and observed the shift in the Vm i.e the intersection point of the blue and red lines.
 
 ![](wrkshp_img/inv_dc_0.5.PNG "for pmos size 0.5")           ![](wrkshp_img/ngspice_invdc_75.PNG "for pmos size 0.75")
@@ -117,10 +122,15 @@ Design of a single cell of the library has the following Flow:
 
 ![](wrkshp_img/rise_delay_calc.PNG)
 
-**Experiment 2:** We did this lab for understanding the layout concepts, ran spice simulation for both pre layout spice and post layout spice and observed the difference in the PULSE WIDTH. Also the area consumed by the layout.  
+**Experiment 2:** We did this lab for understanding the layout concepts, ran spice simulation for both pre layout spice and post layout spice and observed the difference in the PULSE WIDTH. Also the area consumed by the layout. 
+* Steps/commands involved:
+  * cd ngspice_labs
+  * magic -T min2.tech fn_postlayout.mag &
+  * select the area of the layout and type **"box"** in the tkcon window. this steps gives the area covered in the layout in microns
+  * extract the parasitics of the layout using the command **"extract all"** in the tkcon window.
+  * convert the extracted files to spice using **"ext2spice"** this creates a fn_postlayout.spice file in the directory.
+  * In the pre_layout.spice files change the width and length of pmos according to the scaling factor in the post layout file and copy the simulations commands from pre to the post layout files. Now run spice simulations for both the files and observed the change in their pulse width. 
 ![](wrkshp_img/prelayout_spice.PNG)
-![](wrkshp_img/prelayout_pulse width.PNG)
-ran magic file for the same function, calculated the area, extracted the parasitics, and ran post layout spice simulations and calculated the pulse width and compared with the prelayout simu!lations.
 ![](wrkshp_img/area_layout.PNG)
 ![](wrkshp_img/para_extractPNG.PNG)
 
