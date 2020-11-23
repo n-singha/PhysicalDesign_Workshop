@@ -19,7 +19,6 @@ This workshop basically walks us through the various steps involved in the Physi
 Each chip has its core, the core considered here is of RISC-V based Soc. 
 RISC-V is an instruction set architecture, that helps communicating with the computer. There are many flavours of RISC-V here we will be using rv32, 32 bit instruction set. The  riscv implementation used is picorv32. The picorv32 is open-sourced and is implemented by Clifford Wolf. The picorv32 is used as a component in both picoSoc and the RavenSoc. The difference between the Raven and the pico Soc is the picoSoc is targetted towards the embedded systems and the components such as SRAM is external in RAvenSoc. 
 
-![](wrkshp_img/picorv32.PNG)
 We will be using the picorv32 design for the various stages the Physical Design Flow. 
 
 ## 2. Introduction to Open-Source EDA Tools:
@@ -44,6 +43,9 @@ During the synthesis phase, the .v file that is being received from the front-en
 * verilog source file: picorv32.v
 * module name : picorv32
 
+![](wrkshp_img/synthesis_prep.PNG)
+![](wrkshp_img/synth_report.PNG)
+
 ## 4. Floorplaning Considerations
 From the netlist generated from the synthesis phase, the following aspects are considered: 
 * Width and height of core and die:
@@ -55,6 +57,10 @@ From the netlist generated from the synthesis phase, the following aspects are c
 After considering all this aspects the design gets ready for the Placement and routing phase.
 ### 4.1 Lab Instances:
 For the floorplaning labs, we are placing the clock and the resetn pin at the bottom of the picorv32 design with the utilization factor of 70% and aspect ratio 1 indicating that we are considering a square shape. 
+
+![](wrkshp_img/pin_placement.PNG)
+
+![](wrkshp_img/floorplan_lab.PNG)
 
 ## 5. Placement
 In this phase:
