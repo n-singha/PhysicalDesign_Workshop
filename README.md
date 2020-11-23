@@ -13,8 +13,6 @@ This workshop basically walks us through the various steps involved in the Physi
 * **Die:** It is the overall area of the chip that gets manufactured on silicon wafer.
 * **Core:** Its the area where all the digital logic of the chip is placed.
 
-![](wrkshp_img/ic_term.PNG)
-
 ### 1.2 RISC-V based SOC: 
 Each chip has its core, the core considered here is of RISC-V based Soc. 
 RISC-V is an instruction set architecture, that helps communicating with the computer. There are many flavours of RISC-V here we will be using rv32, 32 bit instruction set. The  riscv implementation used is picorv32. The picorv32 is open-sourced and is implemented by Clifford Wolf. The picorv32 is used as a component in both picoSoc and the RavenSoc. The difference between the Raven and the pico Soc is the picoSoc is targetted towards the embedded systems and the components such as SRAM is external in RAvenSoc. 
@@ -37,14 +35,22 @@ For detailed information regarding the Qflow please refer [here](http://opencirc
 
 ## 3. Synthesis 
 During the synthesis phase, the .v file that is being received from the front-end design is converted to a gate level netlist. The synthesis phase is a combination of a number of steps transtation + logic optimization + technology mapping => gate level netlist
-### 3.1 Lab Instances:  
+### 3.1 Lab Instances: 
+We will be using the qflow gui to navigate through the phases of the PD.
+
+Command to run gui: **qlow gui &**
+
 #### 3.1.1 Preparation:
+In the gui, we do the following settings to prep our design for the synthesis phase.
 * technology : 180nm
 * verilog source file: picorv32.v
 * module name : picorv32
 
-![](wrkshp_img/synthesis_prep.PNG)
-![](wrkshp_img/synth_report.PNG)
+![prep stage](wrkshp_img/synthesis_prep.PNG)
+
+After the prep stage we run the synthesis phase, this generates a log file, a snapshot of which is attached. The snapshot shows the statistics, the total number of cells used, total DFFs. We can find the **total logic used** in the design by **total number of cells/total no. of DFFs used**  
+
+![synthesis log file](wrkshp_img/synth_report.PNG)
 
 ## 4. Floorplaning Considerations
 From the netlist generated from the synthesis phase, the following aspects are considered: 
