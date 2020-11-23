@@ -12,6 +12,7 @@ This workshop basically walks us through the various steps involved in the Physi
 * **Pads:** One of the components of the Chip through which information gets exchanged.
 * **Die:** It is the overall area of the chip that gets manufactured on silicon wafer.
 * **Core:** Its the area where all the digital logic of the chip is placed.
+
 ![](wrkshp_img/ic_term.PNG)
 
 ### 1.2 RISC-V based SOC: 
