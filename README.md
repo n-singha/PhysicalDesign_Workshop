@@ -1,9 +1,9 @@
 # PhysicalDesign_Workshop
 A tour to the world of Physical Design using open-sourced EDA tools
 
-## **ABOUT:** 
+## **Introduction:** 
 
-This workshop basically walks us through the various steps involved in the Physical Design Flow of an SOC design, also introducing  the various open-sourced EDA tools involved in each step. It unfolds with the introduction of IC design terminologies, SOC based designs and moves forwards touching the various phases of PD flow starting from synthesis to routing and DRCs.   
+This workshop basically walks us through the various steps involved in the Physical Design Flow of an SOC design, also introducing  the various open-sourced EDA tools involved in each step. It unfolds with the introduction of IC design terminologies, SOC based designs and moves forwards touching the various phases of PD flow starting from synthesis to routing and DRCs. 
 
 ## **1. Introduction to IC Design terminology and RISC-V based picoSoc:**
 ### 1.1 IC design terminologies: 
@@ -55,9 +55,9 @@ After the prep stage we run the synthesis phase, this generates a log file, a sn
 ## 4. Floorplaning Considerations
 From the netlist generated from the synthesis phase, the following aspects are considered: 
 * Width and height of core and die:
-* Preplaced cells:
-* Decoupling capacitors:
-* Power Planing:
+* Preplaced cells
+* Decoupling capacitors
+* Power Planing
 * Pin Placement
 * Cell Blockage
 After considering all this aspects the design gets ready for the Placement and routing phase.
@@ -143,7 +143,7 @@ Design of a single cell of the library has the following Flow:
 * Set up and hold time w.r.t ideal and real clocks. In the case of real clocks, the concept of clock jitter and clock skew comes to the picture.
 * Slack is met when the condition data required - data arrival time is positive i.e. no timing violation.
 ### 7.1 Lab instances: 
-For timing analysis Opentimer tool is used. Steps involed
+For timing analysis Opentimer tool is used. Steps involved
 * the tool reads a std_cell.lib which is mentioned in the configuration file. A snapshot of this library is shown:
 ![](stdcell_lib.PNG)
 
