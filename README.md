@@ -192,7 +192,8 @@ In this lab, the routing stage is performed using the qflow, and the frequency o
 
 * **Observation:** Post layout we noticed that the design got slower comapred to the  pre layout the possible reason is that the addition of parasitics in the post layout. 
 
-
+## Acknowledgement
+* Kunal Ghosh, Co-founder (VSD Corp. Pvt. Ltd)
 
 
 
