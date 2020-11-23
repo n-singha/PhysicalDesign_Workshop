@@ -130,9 +130,12 @@ Design of a single cell of the library has the following Flow:
   * extract the parasitics of the layout using the command **"extract all"** in the tkcon window.
   * convert the extracted files to spice using **"ext2spice"** this creates a fn_postlayout.spice file in the directory.
   * In the pre_layout.spice files change the width and length of pmos according to the scaling factor in the post layout file and copy the simulations commands from pre to the post layout files. Now run spice simulations for both the files and observed the change in their pulse width. 
-![](wrkshp_img/prelayout_spice.PNG)
-![](wrkshp_img/area_layout.PNG)
+
+![](wrkshp_img/Area_layout.PNG)
 ![](wrkshp_img/para_extractPNG.PNG)
+
+* In this image the left is pre-layout spice simulation and right is the post layout simulation:
+![](simu.PNG)
 
 
 ## 7. Timing Analysis using OpenTimer: 
