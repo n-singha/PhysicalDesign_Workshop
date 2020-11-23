@@ -117,7 +117,8 @@ ran magic file for the same function, calculated the area, extracted the parasit
 ### 7.1 Lab instances: 
 For timing analysis Opentimer tool is used. Steps involed
 * the tool reads a std_cell.lib which is mentioned in the configuration file. A snapshot of this library is shown:
-![]()
+![](stdcell_lib.PNG)
+
 * create sdc file: here a clock constraint is given to the analysis tool to perform the timing analysis
 ![](wrkshp_img/sdc.PNG)
 
@@ -144,6 +145,26 @@ For timing analysis Opentimer tool is used. Steps involed
   * Wire Width
 * Physical wires have resistance and capacitance and these information are extracted and represented in the form of a file format called **SPEF**
 ### 8.3 Lab instances:
+In this lab, the routing stage is performed using the qflow, and the frequency of prelayout and postlayout is compared.  
+* Command used :
+  * **qflow route picorv32**
+  * **qflow sta picorv32**
+  * **qflow backanno picorv32**
+
+* Qrouter run and log file: 
+![](wrkshp_img/route_commnd.PNG)
+![](wrkshp_img/qroute_pico.PNG)
+
+![](qroute_log.PNG)
+
+* Prelayout freq check: For this purpose we look into the **log/sta.log** file 
+![](wrkshp_img/prelayout_freq.PNG)
+
+* Post layout freq check: For this purpose we look into the **log/post_sta.log** file
+![](wrkshp_img/post_sta.PNG)
+
+* **Observation:** Post layout we noticed that the design got slower comapred to the  pre layout the possible reason is that the addition of parasitics in the post layout. 
+
 
 
 
