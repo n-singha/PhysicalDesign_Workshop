@@ -103,12 +103,27 @@ Design of a single cell of the library has the following Flow:
   * timing,noise, power .libs
   
 ### 6.2 Lab Instances:
-**Part 1:** We did ng spice simultaions of a inverter for both dc and transient analysis
-* dc: we did it for pmos size 0.5 and 0.75 and observed the shift in the Vm i.e the intersection point of the blue and red lines.
-* tran: calculated rise delay for pmos width 0.75
+**Experiment 1:** We did ngspice simultaions of a inverter for both dc and transient analysis
+* commands to run ngspice: 
+  **ngspice inv.spice
+  **ngspice 1 -> run
+  **ngspice 1 -> setplot dc1
+  **ngspice 1 -> plot out**
+* We did ngspice simulations for pmos size 0.5 and 0.75 and observed the shift in the Vm i.e the intersection point of the blue and red lines.
 
-**Part 2:** we did this lab for understanding the layout concepts, ran spice simulation for a implented function this is the pre layout spice simulations (prelayout_spice_1.25, intersection point 1.25, prelayout pulse width ) calculated pulse width.
-ran magic file for the same function, calculated the area, extracted the parasitics, and ran post layout spice simulations and calculated the pulse width and compared with the prelayout simulations.
+![](wrkshp_img/inv_dc_0.5.PNG "for pmos size 0.5")           ![](wrkshp_img/ngspice_invdc_75.PNG "for pmos size 0.75")
+
+* Similarly we did ngspice simulation for transient analysis of a inverter and calculated rise delay for pmos width 0.75
+
+![](wrkshp_img/rise_delay_calc.PNG)
+
+**Experiment 2:** We did this lab for understanding the layout concepts, ran spice simulation for both pre layout spice and post layout spice and observed the difference in the PULSE WIDTH. Also the area consumed by the layout.  
+![](wrkshp_img/prelayout_spice.PNG)
+![](wrkshp_img/prelayout_pulse width.PNG)
+ran magic file for the same function, calculated the area, extracted the parasitics, and ran post layout spice simulations and calculated the pulse width and compared with the prelayout simu!lations.
+![](wrkshp_img/area_layout.PNG)
+![](wrkshp_img/para_extractPNG.PNG)
+
 
 ## 7. Timing Analysis using OpenTimer: 
 * Introduced to the concept of delay tables. The delay tables contain the delay of a cell w.r.t input slew and output load.
@@ -154,7 +169,6 @@ In this lab, the routing stage is performed using the qflow, and the frequency o
 * Qrouter run and log file: 
 ![](wrkshp_img/route_commnd.PNG)
 ![](wrkshp_img/qroute_pico.PNG)
-
 ![](qroute_log.PNG)
 
 * Prelayout freq check: For this purpose we look into the **log/sta.log** file 
