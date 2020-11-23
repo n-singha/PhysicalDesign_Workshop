@@ -48,9 +48,9 @@ In the gui, we do the following settings to prep our design for the synthesis ph
 
 ![prep stage](wrkshp_img/synthesis_prep.PNG)
 
-After the prep stage we run the synthesis phase, this generates a log file, a snapshot of which is attached. The snapshot shows the statistics, the total number of cells used, total DFFs. We can find the **total logic used** in the design by **total number of cells/total no. of DFFs used**  
+After the prep stage we run the synthesis phase, this generates a log file, a snapshot of which is attached. The snapshot shows the statistics, the total number of cells used, total DFFs. We can find the **total logic used** in the design by **total no. of DFFs used/total number of cells**  
 
-![synthesis log file](wrkshp_img/synth_report.PNG)
+![](wrkshp_img/synth_report.PNG)
 
 ## 4. Floorplaning Considerations
 From the netlist generated from the synthesis phase, the following aspects are considered: 
@@ -61,12 +61,18 @@ From the netlist generated from the synthesis phase, the following aspects are c
 * Pin Placement
 * Cell Blockage
 After considering all this aspects the design gets ready for the Placement and routing phase.
+
 ### 4.1 Lab Instances:
-For the floorplaning labs, we are placing the clock and the resetn pin at the bottom of the picorv32 design with the utilization factor of 70% and aspect ratio 1 indicating that we are considering a square shape. 
+For the floorplaning labs, 
+* We are placing the clock and the resetn pin at the bottom of the picorv32 design. Steps involved in the qflow gui are as follows:
+ * click on **arrange pins --> auto group --> apply**
+ * click on **arrange pins --> create group my_pins --> drag the pins clk and resetn to my_pins section --> check the fixed box and bottom box --> apply**
 
-![](wrkshp_img/pin_placement.PNG)
+ ![](wrkshp_img/pin_placement.PNG)
 
-![](wrkshp_img/floorplan_lab.PNG)
+* set the utilization factor as 0.70 and aspect ratio 1 indicating that we are considering a square shape and run the placement flow. 
+
+ ![](wrkshp_img/floorplan_lab.PNG)
 
 ## 5. Placement
 In this phase:
