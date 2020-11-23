@@ -107,9 +107,9 @@ For timing analysis Opentimer tool is used. Steps involed
 ### 8.2 DRC (Design Rule Check):
 * Wires are made using optical lithography techniques so, most of the design rules comes from the lithography point of view. 
 * Some of DRC rules for a pair of Wires: 
- * Wire pitch
- * Wire Space
- * Wire Width
+  * Wire pitch
+  * Wire Space
+  * Wire Width
 * Physical wires have resistance and capacitance and these information are extracted and represented in the form of a file format called **SPEF**
 ### 8.3 Lab instances:
 
