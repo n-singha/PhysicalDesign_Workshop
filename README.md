@@ -13,9 +13,14 @@ This workshop basically walks us through the various steps involved in the Physi
 * **Die:** It is the overall area of the chip that gets manufactured on silicon wafer.
 * **Core:** Its the area where all the digital logic of the chip is placed.
 
+![](wrkshp_img/ic_term.PNG)
+
+
 ### 1.2 RISC-V based SOC: 
 Each chip has its core, the core considered here is of RISC-V based Soc. 
 RISC-V is an instruction set architecture, that helps communicating with the computer. There are many flavours of RISC-V here we will be using rv32, 32 bit instruction set. The  riscv implementation used is picorv32. The picorv32 is open-sourced and is implemented by Clifford Wolf. The picorv32 is used as a component in both picoSoc and the RavenSoc. The difference between the Raven and the pico Soc is the picoSoc is targetted towards the embedded systems and the components such as SRAM is external in RAvenSoc. 
+
+![](wrkshp_img/picorv32.PNG)
 
 We will be using the picorv32 design for the various stages the Physical Design Flow. 
 
