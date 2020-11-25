@@ -111,13 +111,15 @@ Design of a single cell of the library has the following Flow:
 **Experiment 1:** We did ngspice simultaions of a inverter for both dc and transient analysis
 * commands to run ngspice: 
   
-  **ngspice inv.spice**
+  <div class="bg-blue-light mb-2">
   
-  **ngspice 1 -> run**
+  ngspice inv.spice
   
-  **ngspice 1 -> setplot dc1**
+  ngspice 1 -> run
   
-  **ngspice 1 -> plot out**
+  ngspice 1 -> setplot dc1
+  
+  ngspice 1 -> plot out
   
 * We did ngspice simulations for pmos size 0.5 and 0.75 and observed the shift in the Vm i.e the intersection point of the blue and red lines.
 
